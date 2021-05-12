@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "incremental": false,
+    "noEmit": true,
+    "esModuleInterop": true
+  },
+  "include": [
+    "__tests__",
+    "build",
+  ],
+  "paths": {
+    "@/*": [
+      "./*"
+    ]
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

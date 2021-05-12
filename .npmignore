@@ -1,0 +1,12 @@
+__tests__
+__fixtures__
+__mocks__
+.temp
+*.log
+src
+tsconfig.json
+tsconfig.build.json
+.vscode
+coverage
+examples
+.node

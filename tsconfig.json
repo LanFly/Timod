@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "incremental": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "alwaysStrict": true,
+    "importHelpers": true,
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "outDir": "lib",
+    "sourceMap": true,
+    "target": "es5",
+    "declaration": true,
+    "declarationMap": true,
+    "lib": [
+      "es5",
+      "es6",
+      "DOM"
+    ],
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
+  },
+  "include": [
+    "src/**/*",
+    "types",
+    "*.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
