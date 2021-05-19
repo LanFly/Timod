@@ -66,11 +66,29 @@ function generateTypeDefine(type) {
   return typeDefine;
 }
 
+function generateTypeValue(typeDefine, value) {
+  const { default: defaultValue, format } = typeDefine;
+  let typeValue = value;
+
+  switch (typeDefine.type) {
+    case 'Model':
+      return typeDefine.construct.parse(value);
+  }
+
+  if (typeof format === 'function') {
+    typeValue = format(typeValue);
+  }
+  if (typeValue === undefined) {
+    typeValue = defaultValue;
+  }
+  return typeValue;
+}
+
 class Model {
   definition;
   constructor(definition) {
     if (!isPlainObject(definition)) {
-      throw new TypeError('The definition must be a Object.');
+      throw new TypeError('The definition must be an Object.');
     }
 
     this.definition = Object.keys(definition).map((key) => {
@@ -87,10 +105,10 @@ class Model {
   parse(data) {
     const _data = data || {};
     const result = {};
-    Object.keys(_data).forEach((key) => {
-      const types = _data[key];
-
+    Object.keys(this.definition).forEach((key) => {
+      result[key] = generateTypeValue(this.definition[key], _data[key]);
     });
+    return result;
   }
 }
 

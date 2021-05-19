@@ -61,13 +61,34 @@ describe('test basic type', () => {
     );
   });
 
-  it('Model', () => {
+  it('object', () => {
     const basicModel = Timod.define({
-      age: Number,
-      name: String
+      name: {
+        type: String,
+        default: 'timod'
+      }
     });
+    expect(basicModel.definition.name).toEqual(
+      expect.objectContaining({
+        type: 'String',
+        construct: String,
+        default: 'timod',
+        format: null,
+        mapto: null
+      })
+    );
+  });
+});
+
+describe('test recursive type', () => {
+  it('Model->basic', () => {
     const model = Timod.define({
-      userInfo: basicModel
+      userInfo: {
+        type: {
+          age: Number,
+          name: String
+        }
+      }
     });
     expect(model.definition.userInfo).toEqual(
       expect.objectContaining({
@@ -97,34 +118,13 @@ describe('test basic type', () => {
     );
   });
 
-  it('object', () => {
+  it('Model -> Model', () => {
     const basicModel = Timod.define({
-      name: {
-        type: String,
-        default: 'timod'
-      }
+      age: Number,
+      name: String
     });
-    expect(basicModel.definition.name).toEqual(
-      expect.objectContaining({
-        type: 'String',
-        construct: String,
-        default: 'timod',
-        format: null,
-        mapto: null
-      })
-    );
-  });
-});
-
-describe('test recursive type', () => {
-  it('object->basic', () => {
     const model = Timod.define({
-      userInfo: {
-        type: {
-          age: Number,
-          name: String
-        }
-      }
+      userInfo: basicModel
     });
     expect(model.definition.userInfo).toEqual(
       expect.objectContaining({
