@@ -1,4 +1,4 @@
-import Timod from '../dist/timod.umd';
+import Timod from '../cjs';
 
 describe('test basic type', () => {
   it('boolean', () => {
