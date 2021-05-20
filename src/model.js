@@ -106,7 +106,9 @@ class Model {
     const _data = data || {};
     const result = {};
     Object.keys(this.definition).forEach((key) => {
-      result[key] = generateTypeValue(this.definition[key], _data[key]);
+      const typeDefine = this.definition[key];
+      const { mapto } = typeDefine;
+      result[key] = generateTypeValue(typeDefine, _data[mapto || key]);
     });
     return result;
   }
