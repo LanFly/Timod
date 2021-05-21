@@ -61,7 +61,7 @@ function generateTypeDefine(type) {
       });
     }
   } else {
-    throw new TypeError(`Unknow type: ${Object.prototype.toString.call(type)}.\n  ${type}`);
+    throw new TypeError(`Unknow type: ${Object.prototype.toString.call(type)}.\nReceive: ${type}`);
   }
   return typeDefine;
 }
