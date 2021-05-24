@@ -2,11 +2,11 @@
   "compilerOptions": {
     "incremental": false,
     "noEmit": true,
+    "allowJs": true,
     "esModuleInterop": true
   },
   "include": [
-    "__tests__",
-    "build",
+    "__tests__"
   ],
   "paths": {
     "@/*": [

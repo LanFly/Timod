@@ -1,4 +1,4 @@
-import Timod from '../cjs';
+import Timod from '../src';
 
 describe('test mapto', () => {
   it('test basic type mapto', () => {

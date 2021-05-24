@@ -1,4 +1,4 @@
-import Timod from '../cjs';
+import Timod from '../src';
 
 describe('test format', () => {
   it('test basic type format', () => {

@@ -9,15 +9,19 @@ module.exports = {
     '**/?(*.)+(spec|test).[jt]s?(x)'
   ],
   transform: {
-    '^.+\\.tsx?$': 'ts-jest'
+    '^.+\\.[jt]sx?$': 'ts-jest'
   },
+  transformIgnorePatterns: [
+    "node_modules/(?!(lodash-es)/)"
+  ],
   testPathIgnorePatterns: [],
   coveragePathIgnorePatterns: [
     '/__tests__/',
     '/bin/'
   ],
   collectCoverageFrom: [
-    'lib/**/*.js'
+    'src/**/*.js',
+    'src/**/*.ts'
   ],
   coverageReporters: [
     'json',

@@ -1,4 +1,4 @@
-import Timod from '../cjs';
+import Timod from '../src';
 
 describe('test basic type value', () => {
   it('boolean', () => {
