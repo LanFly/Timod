@@ -1,7 +1,7 @@
 {
   "name": "timod",
   "description": "a tiny models definition library for JavaScript",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "browser": "dist/timod.umd.js",
