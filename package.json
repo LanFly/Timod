@@ -8,6 +8,8 @@
   "license": "MIT",
   "files": [
     "dist",
+    "esm",
+    "cjs",
     "types",
     "yarn.lock",
     "!*.map",
